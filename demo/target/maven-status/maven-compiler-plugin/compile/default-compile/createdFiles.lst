@@ -1,0 +1,4 @@
+com\example\demo\Book.class
+com\example\demo\BookRepository.class
+com\example\demo\BookController.class
+com\example\demo\SpringMongodbApplication.class

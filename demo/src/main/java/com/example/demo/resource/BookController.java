@@ -18,23 +18,28 @@ import com.example.demo.repository.BookRepository;
 public class BookController {
 	@Autowired
 	private BookRepository repository;
-	
+
 	@PostMapping("/saveBook")
 	public String saveBook(@RequestBody Book book) {
 		repository.save(book);
 		return "One Book saved";
 	}
-	
+
 	@GetMapping("/findAllBooks")
 	public List<Book> getBook() {
 		return repository.findAll();
 	}
-	
+
+	@GetMapping("/help")
+	public String help() {
+		return "Hello";
+	}
+
 	@GetMapping("/findAllBooks/{id}")
 	public Optional<Book> getBook(@PathVariable int id) {
 		return repository.findById(id);
 	}
-	
+
 	@DeleteMapping("/delete/{id}")
 	public String deleteBook(@PathVariable int id) {
 		repository.deleteById(id);
